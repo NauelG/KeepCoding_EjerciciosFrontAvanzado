@@ -11,7 +11,8 @@ module.exports = {
     devServer: {
         open: true,
         overlay: true,
-        port: 3000
+        port: 3000,
+        hot: true
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -29,9 +30,9 @@ module.exports = {
                 use: "babel-loader"
             },
             {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader']
+                test: /\.scss$/,
+                use: ['style-loader', 'css-loader', 'sass-loader']
             }
         ]
     }
-}
+};

@@ -1,7 +1,6 @@
-import './index.css';
+import './index.scss';
+import { makeHeader } from './components/header/header-component';
 
 document.addEventListener('DOMContentLoaded', () => {
-    const header = document.createElement('header');
-    document.body.appendChild(header);
-    header.innerHTML = 'Play';
+    document.body.appendChild(makeHeader({ title: 'Keep Coding' }));
 });

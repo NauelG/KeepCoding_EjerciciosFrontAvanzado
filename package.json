@@ -6,7 +6,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "webpack",
-        "start": "webpack-dev-server --mode=development"
+        "eslint": "eslint .eslintrc.js",
+        "start": "webpack-dev-server --mode=development --hot"
     },
     "repository": {
         "type": "git",
@@ -24,7 +25,10 @@
         "babel-loader": "^8.0.2",
         "babel-preset-env": "^1.7.0",
         "css-loader": "^1.0.0",
+        "eslint": "^5.5.0",
         "html-webpack-plugin": "^3.2.0",
+        "node-sass": "^4.9.3",
+        "sass-loader": "^7.1.0",
         "style-loader": "^0.23.0",
         "webpack": "^4.17.2",
         "webpack-cli": "^3.1.0",
@@ -32,6 +36,7 @@
     },
     "dependencies": {
         "@babel/core": "^7.0.0",
-        "@babel/preset-env": "^7.0.0"
+        "@babel/preset-env": "^7.0.0",
+        "eslint-config-airbnb-base": "^13.1.0"
     }
 }
