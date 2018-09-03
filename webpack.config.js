@@ -1,18 +1,12 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var merge = require('webpack-merge');
 
-
-module.exports = {
+var commonConfig = {
     entry: path.join(__dirname, 'src', 'index'),
     output: {
         filename: 'bundle[hash].js',
         path: path.resolve(__dirname, 'dist')
-    },
-    devServer: {
-        open: true,
-        overlay: true,
-        port: 3000,
-        hot: true
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -36,3 +30,19 @@ module.exports = {
         ]
     }
 };
+
+var devConfig = {
+    devServer: {
+        open: true,
+        overlay: true,
+        port: 3000,
+        hot: true
+    }
+};
+
+var prodConfig = {};
+
+module.exports = (env, argv) =>
+    argv.mode === 'development' ?
+    merge(commonConfig, devConfig) :
+    merge(commonConfig, prodConfig);
