@@ -1,5 +1,7 @@
-console.log('Hola mundo desde el archivo Js - con live reload');
+import './index.css';
 
-const hola = 'Hola';
-
-console.log(hola);
+document.addEventListener('DOMContentLoaded', () => {
+    const header = document.createElement('header');
+    document.body.appendChild(header);
+    header.innerHTML = 'Play';
+});
