@@ -21,7 +21,7 @@ var commonConfig = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new MiniCssExtractPlugin({
-            filename: '[name][hash].css'
+            filename: '[name].[hash].css'
         })
     ],
     module: {
@@ -38,7 +38,7 @@ var commonConfig = {
                 ]
             },
             {
-                test: /\.(jpg|png)$/,
+                test: /\.(jpg|png|svg)$/,
                 use: [
                     'file-loader',
                     {
@@ -51,7 +51,8 @@ var commonConfig = {
     resolve: {
         alias: {
             components: path.resolve(__dirname, 'src', 'components'),
-            assets: path.resolve(__dirname, 'src', 'assets')
+            assets: path.resolve(__dirname, 'src', 'assets'),
+            styles: path.resolve(__dirname, 'src', 'styles')
         }
     }
 };
@@ -61,7 +62,9 @@ var devConfig = {
         open: true,
         overlay: true,
         port: 3000,
-        hot: true
+        hot: true,
+        contentBase: path.join(__dirname, 'src'),
+        watchContentBase: true
     }
 };
 
