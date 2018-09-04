@@ -34,7 +34,7 @@ var commonConfig = {
                 test: /\.scss$/,
                 use: [MiniCssExtractPlugin.loader,
                     'css-loader',
-                    'sass-loader'
+                    'sass-loader',
                 ]
             },
             {
