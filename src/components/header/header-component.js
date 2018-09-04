@@ -1,5 +1,5 @@
 import './header-styles.scss';
-import meeseeksImage from '../../../assets/meeseeks.png';
+import meeseeksImage from 'assets/meeseeks.png';
 
 export const makeHeader = ({ title }) => {
     const header = document.createElement('header');

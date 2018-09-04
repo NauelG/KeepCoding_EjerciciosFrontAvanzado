@@ -4,6 +4,7 @@ var merge = require('webpack-merge');
 var webpack = require('webpack');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+
 var commonConfig = {
     entry: path.join(__dirname, 'src', 'index'),
     output: {
@@ -46,6 +47,12 @@ var commonConfig = {
                 ]
             }
         ]
+    },
+    resolve: {
+        alias: {
+            components: path.resolve(__dirname, 'src', 'components'),
+            assets: path.resolve(__dirname, 'src', 'assets')
+        }
     }
 };
 
