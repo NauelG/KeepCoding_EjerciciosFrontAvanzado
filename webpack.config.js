@@ -32,13 +32,14 @@ var commonConfig = {
             },
             {
                 test: /\.scss$/,
-                use: [MiniCssExtractPlugin.loader,
+                use: [
+                    MiniCssExtractPlugin.loader,
                     'css-loader',
                     'sass-loader',
                 ]
             },
             {
-                test: /\.(jpg|png|svg)$/,
+                test: /\.(jpg|png|svg|gif|jpe?g)$/,
                 use: [
                     'file-loader',
                     {
@@ -52,7 +53,8 @@ var commonConfig = {
         alias: {
             components: path.resolve(__dirname, 'src', 'components'),
             assets: path.resolve(__dirname, 'src', 'assets'),
-            styles: path.resolve(__dirname, 'src', 'styles')
+            styles: path.resolve(__dirname, 'src', 'styles'),
+            utils: path.resolve(__dirname, 'src', 'utils'),
         }
     }
 };
