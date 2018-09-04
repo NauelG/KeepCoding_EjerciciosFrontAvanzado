@@ -1,5 +1,6 @@
+@import '~styles/settings.scss';
 .header {
-    background-color: teal;
+    background-color: $primary-color;
     display: flex;
     align-items: center;
     justify-content: center;
