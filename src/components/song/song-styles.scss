@@ -1,0 +1,22 @@
+@import '~styles/settings';
+@import '~styles/utils';
+.song {
+    margin: 10px 0px;
+    .song-image {
+        width: 180px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .song-title {
+        margin-top: 5px;
+        margin-bottom: 0;
+        color: $primary-color;
+    }
+    .song-author {
+        margin-top: 2px;
+        text-transform: uppercase;
+        @include fontSize($font-size);
+        color: $gray;
+    }
+}

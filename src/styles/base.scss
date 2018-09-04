@@ -1,1 +1,12 @@
-@import '~styles/normalize.scss';
+// @import '~styles/normalize.scss';
+@import '~styles/utils.scss';
+@import '~styles/settings.scss';
+h1 {
+    @include fontSize($font-size-xxxl);
+    font-family: $font-family-main;
+}
+
+p,
+div {
+    font-family: $font-family;
+}
