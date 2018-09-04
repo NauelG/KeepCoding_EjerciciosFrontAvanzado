@@ -1,6 +1,8 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var merge = require('webpack-merge');
+var webpack = require('webpack');
+var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 var commonConfig = {
     entry: path.join(__dirname, 'src', 'index'),
@@ -15,6 +17,10 @@ var commonConfig = {
             minify: {
                 collapseWhitespace: true
             }
+        }),
+        new webpack.HotModuleReplacementPlugin(),
+        new MiniCssExtractPlugin({
+            filename: '[name][hash].css'
         })
     ],
     module: {
@@ -25,7 +31,19 @@ var commonConfig = {
             },
             {
                 test: /\.scss$/,
-                use: ['style-loader', 'css-loader', 'sass-loader']
+                use: [MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'sass-loader'
+                ]
+            },
+            {
+                test: /\.(jpg|png)$/,
+                use: [
+                    'file-loader',
+                    {
+                        loader: 'image-webpack-loader'
+                    }
+                ]
             }
         ]
     }
