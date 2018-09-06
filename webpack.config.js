@@ -1,9 +1,6 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var merge = require('webpack-merge');
-var webpack = require('webpack');
-var MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
 
 var commonConfig = {
     entry: path.join(__dirname, 'src', 'index'),
@@ -18,10 +15,6 @@ var commonConfig = {
             minify: {
                 collapseWhitespace: true
             }
-        }),
-        new webpack.HotModuleReplacementPlugin(),
-        new MiniCssExtractPlugin({
-            filename: '[name].[hash].css'
         })
     ],
     module: {
@@ -32,31 +25,9 @@ var commonConfig = {
             },
             {
                 test: /\.scss$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'sass-loader',
-                ]
-            },
-            {
-                test: /\.(jpg|png|svg|gif|jpe?g)$/,
-                use: [
-                    'file-loader',
-                    {
-                        loader: 'image-webpack-loader'
-                    }
-                ]
+                use: ['style-loader', 'css-loader', 'sass-loader']
             }
         ]
-    },
-    resolve: {
-        alias: {
-            components: path.resolve(__dirname, 'src', 'components'),
-            assets: path.resolve(__dirname, 'src', 'assets'),
-            styles: path.resolve(__dirname, 'src', 'styles'),
-            utils: path.resolve(__dirname, 'src', 'utils'),
-            data: path.resolve(__dirname, 'src', 'data')
-        }
     }
 };
 
@@ -65,9 +36,7 @@ var devConfig = {
         open: true,
         overlay: true,
         port: 3000,
-        hot: true,
-        contentBase: path.join(__dirname, 'src'),
-        watchContentBase: true
+        hot: true
     }
 };
 
