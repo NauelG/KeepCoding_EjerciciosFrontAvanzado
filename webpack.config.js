@@ -3,6 +3,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var merge = require('webpack-merge');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
+var CriticalPlugin = require('webpack-plugin-critical').CriticalPlugin;
 
 var commonConfig = {
     entry: path.join(__dirname, 'src', 'index'),
@@ -45,6 +46,7 @@ var commonConfig = {
             data: path.resolve(__dirname, 'src', 'data')
         }
     },
+    devtool: 'source-map'
 };
 
 var devConfig = {
@@ -69,7 +71,13 @@ var prodConfig = {
         new MiniCssExtractPlugin({
             filename: '[name].[hash].css'
         }),
-        new CleanWebpackPlugin(['dist'])
+        new CleanWebpackPlugin(['dist']),
+        new CriticalPlugin({
+            src: path.join(__dirname, 'src', 'index.html'),
+            inline: true,
+            minify: true,
+            dest: path.join(__dirname, 'dist', 'index.html')
+        })
     ],
     module: {
         rules: [{
