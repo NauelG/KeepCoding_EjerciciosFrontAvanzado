@@ -1,3 +1,4 @@
+@import 'utils';
 @import url('https://fonts.googleapis.com/css?family=PT+Serif|Poppins');
 $white: #fefefe;
 $primary-color: #b4e07a;
@@ -23,26 +24,3 @@ sans-serif;
 $breakpoint-tablet-portrait: 600px;
 $breakpoint-tablet-landscape: 900px;
 $breakpoint-desktop: 1200px;
-@mixin for-mobile {
-    @media only screen and (max-width: #{$breakpoint-tablet-portrait}) {
-        @content;
-    }
-}
-
-@mixin for-tablet-portrait {
-    @media only screen and (min-width: #{$breakpoint-tablet-portrait}) {
-        @content;
-    }
-}
-
-@mixin for-tablet-landscape {
-    @media only screen and (min-width: #{$breakpoint-tablet-landscape}) {
-        @content;
-    }
-}
-
-@mixin for-desktop {
-    @media only screen and (min-width: #{$breakpoint-desktop}) {
-        @content;
-    }
-}
