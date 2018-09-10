@@ -71,7 +71,8 @@ var commonConfig = {
             assets: path.resolve(__dirname, 'src', 'assets'),
             styles: path.resolve(__dirname, 'src', 'styles'),
             utils: path.resolve(__dirname, 'src', 'utils'),
-            data: path.resolve(__dirname, 'src', 'data')
+            data: path.resolve(__dirname, 'src', 'data'),
+            services: path.resolve(__dirname, 'src', 'services'),
         }
     },
     devtool: 'source-map'
