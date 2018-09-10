@@ -6,7 +6,10 @@ var CleanWebpackPlugin = require('clean-webpack-plugin');
 var CriticalPlugin = require('webpack-plugin-critical').CriticalPlugin;
 
 var commonConfig = {
-    entry: path.join(__dirname, 'src', 'index'),
+    entry: {
+        songs: ['babel-polyfill', path.join(__dirname, 'src', 'pages', 'songs', 'index')],
+        contact: ['babel-polyfill', path.join(__dirname, 'src', 'pages', 'contact', 'index')]
+    },
     output: {
         filename: 'bundle[hash].js',
         path: path.resolve(__dirname, 'dist')
@@ -17,7 +20,15 @@ var commonConfig = {
             template: path.join(__dirname, 'src', 'index.html'),
             minify: {
                 collapseWhitespace: true
-            }
+            },
+            chunks: ['songs']
+        }, {
+            title: 'Contact',
+            template: path.join(__dirname, 'src', 'index.html'),
+            minify: {
+                collapseWhitespace: true
+            },
+            chunks: ['contact']
         })
     ],
     module: {

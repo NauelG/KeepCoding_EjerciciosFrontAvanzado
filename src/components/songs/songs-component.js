@@ -1,18 +1,20 @@
 import { appendComponent } from 'utils/utils';
-import { makeSong } from 'components/song/song-component';
-import { makeContainer } from 'components/container/container-component';
-import songsJSON from 'data/songs.json';
-import './songs-styles.scss';
+import { createSong } from 'components/song/song-component';
 
-export const makeSongs = () => {
-    const container = makeContainer();
-    const songs = document.createElement('div');
-    songs.classList.add('songs');
-
+export const createSongs = () => {
+  const songs = document.getElementById('songs');
+  fetch('http://localhost:8000/songs').then(
+    (response) => {
+      if (response.ok) {
+        return response.json();
+      }
+      console.warn('error', response.status);
+      return null;
+    }
+  ).then((songsJSON) => {
     appendComponent(songs,
-        songsJSON.map(songData => makeSong(songData)));
-
-    container.appendChild(songs);
-    return container;
+      songsJSON.map(songData => createSong(songData)));
+  });
 };
-export default makeSongs;
+
+export default createSongs;
