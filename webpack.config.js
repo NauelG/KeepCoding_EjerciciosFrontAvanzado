@@ -58,6 +58,10 @@ var commonConfig = {
                         },
                     },
                 ],
+            },
+            {
+                test: /\.(html|ejs)$/,
+                use: ['html-loader', 'ejs-html-loader']
             }
         ]
     },

@@ -11,18 +11,11 @@
 </head>
 
 <body>
-    <header>
-        <i class="fas fa-headphones-alt headphones-icon"></i>
-        <h1 id="title" class="title"></h1>
-        <div class="menu">
-            <a title="Contact" href='./contact'>Contact<a/>
-    </div>
-  </header>
-  <div class="container">
-    <div id="songs" class="songs"></div>
-  </div>
-  <footer>
-    <div>Keepcoding 2018</div>
-  </footer>
+    <%- include('../partials/header.ejs') %>
+        <div class="container">
+            <div id="songs" class="songs"></div>
+        </div>
+        <%- include('../partials/footer.ejs') %>
 </body>
+
 </html>
