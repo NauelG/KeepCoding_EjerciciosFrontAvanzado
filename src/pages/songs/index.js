@@ -3,5 +3,5 @@ import { createSongs } from 'components/songs/songs-component';
 
 import 'styles/main.scss';
 
-updateHeader({ title: 'Keep playing' });
+updateHeader({ title: 'Keep playing', active: 'home' });
 createSongs();
