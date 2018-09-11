@@ -1,0 +1,36 @@
+@import '~styles/settings';
+@import '~styles/utils';
+
+.song-detail {
+  margin-left: $gutter-padding;
+  width: 70%;
+
+  .song-image {
+    max-width: 80%;
+    border-radius: 10px;
+  }
+
+  .song-title {
+    @include fontSize($font-size-xl);
+    margin-top: 5px;
+    margin-bottom: 0;
+    color: $primary-color;
+  }
+
+  .song-author {
+    margin-top: 2px;
+    text-transform: uppercase;
+    @include fontSize($font-size-xl);
+    color: $gray;
+  }
+
+  .back {
+    color: $link-color;
+    text-decoration: none;
+    @include fontSize($font-size-xl);
+  }
+
+  .song-detail-description {
+    margin: $gutter-padding 0;
+  }
+}

@@ -9,6 +9,10 @@ class SongService {
   async getSongs() {
     return this.APIServiceInstance.get(this.model);
   }
+
+  async getSong(id) {
+    return this.APIServiceInstance.get(`${this.model}/${id}`);
+  }
 }
 
 export default SongService;

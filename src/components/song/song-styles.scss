@@ -2,7 +2,7 @@
 @import '~styles/utils';
 
 .song {
-  margin: 10px 0px;
+  margin: $gutter-padding / 2;
 
   .song-image {
     width: 180px;

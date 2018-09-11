@@ -1,11 +1,13 @@
-import './song-styles.scss';
-
-export const createSong = ({ title, author, imageUrl } = { title: 'No title', author: 'No author' }) => {
+export const createSong = ({ title, author, imageUrl, id } = { title: 'No title', author: 'No author' }) => {
   const song = document.createElement('div');
   song.classList.add('song');
   song.innerHTML = `
-    <img src="${imageUrl}" class="song-image" ></img>
-    <p class="song-title">${title}</p>
+    <a class="song-title" href="/song/?id=${id}">
+      <img src="${imageUrl}" class="song-image" ></img>
+    </a>
+    <div>
+      <a class="song-title" href="/song/?id=${id}">${title}</a>
+    </div>
     <p class="song-author">${author}</p>
   `;
   return song;

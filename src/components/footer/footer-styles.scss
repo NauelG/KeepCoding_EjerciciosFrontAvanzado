@@ -1,6 +1,8 @@
 @import '~styles/settings';
 
 footer {
+  height: $footer-height;
+  box-sizing: border-box;
   position: fixed;
   background-color: $white;
   bottom: 0;
