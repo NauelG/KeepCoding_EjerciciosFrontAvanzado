@@ -1,3 +1,3 @@
 /node_modules
 /dist
-/dbata/db.json
+src/data/db.json
