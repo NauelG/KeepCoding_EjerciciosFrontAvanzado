@@ -1,0 +1,71 @@
+@import '~styles/layout';
+.contact-form-wrapper {
+  flex-direction: column;
+}
+
+#notice {
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  color: $secondary-color;
+  padding: $gutter-padding;
+}
+
+#contact-form {
+  width: 100%;
+  margin: 0 $gutter-padding / 2;
+
+  @include for-tablet-portrait {
+    width: 70%;
+  }
+  display: flex;
+  flex-wrap: wrap;
+
+  .contact-form-field {
+    padding: $gutter-padding / 2 0;
+    width: 100%;
+    &:not(.contact-textarea) {
+      @include for-tablet-landscape {
+        width: 33.3333%;
+        padding-right: $gutter-padding;
+        box-sizing: border-box;
+      }
+    }
+
+    label {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      color: $secondary-color;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      border: 0;
+      border-bottom: solid 1px $border-color;
+
+      &.error {
+        border-color: $error;
+      }
+    }
+
+    textarea {
+      @extend input;
+      min-height: 4em;
+      border: solid 1px $border-color;
+      @include for-tablet-landscape {
+        width: 100%;
+      }
+    }
+  }
+
+  #contact-form-submit {
+    display: block;
+    width: 100%;
+    background-color: $primary-color;
+    color: $white;
+    padding: 10px;
+  }
+}
