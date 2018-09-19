@@ -43,7 +43,7 @@ En la plantilla de listado de artículos se deberá mostrar un listado de 10 art
 Nombre del autor del artículo
 Foto de perfil: Al menos dos de los artículos deberán simular que el autor no hubiera subido ninguna imagen de perfil y mostrar una imagen de placeholder.
 - El tiempo de publicación del artículo: esta fecha deberá mostrar el tiempo pasado desde la fecha y hora de publicación en un formato legible (ejemplo: Artículo publicado hace 5 minutos). Si el artículo ha sido publicado hace más de un día se mostrará la fecha de publicación
-- Número de comentarios - El número de comentarios que tiene el artículo. Al hacer click en el número de comentarios, se deberá cargar la plantilla de detalle de artículo mostrando directamente la zona de comentarios del artículo.
+- Link a los comentarios - Al hacer click se deberá cargar la plantilla de detalle de artículo mostrando directamente la zona de comentarios. (Opcional: Número de comentarios - El número de comentarios que tiene el artículo.)
 
 ## Requisitos de la plantilla de detalle de un artículo
 

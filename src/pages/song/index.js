@@ -7,7 +7,6 @@ import 'styles/main.scss';
 const SongServiceInstance = new SongService();
 const query = queryString.parse(window.location.search);
 const songId = query && query.id;
-console.log('songId', songId);
 
 if (songId) {
   SongServiceInstance.getSong(songId).then((songJSON) => {

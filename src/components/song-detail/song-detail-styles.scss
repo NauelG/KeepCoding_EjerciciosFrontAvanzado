@@ -9,14 +9,33 @@
     max-width: 80%;
     border-radius: 10px;
   }
+  .title-container {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
 
-  .song-title {
-    @include fontSize($font-size-xl);
-    margin-top: 5px;
-    margin-bottom: 0;
-    color: $primary-color;
+    .song-title {
+      @include fontSize($font-size-xl);
+      margin-top: 5px;
+      margin-bottom: 0;
+      color: $primary-color;
+    }
+
+    .like-button {
+      outline-width: 0;
+      @include fontSize($font-size-xxxl);
+      background-color: transparent;
+      color: $red;
+      border: none;
+
+      .fas {
+        animation-name: heartBeat;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+    }
   }
-
   .song-author {
     margin-top: 2px;
     text-transform: uppercase;

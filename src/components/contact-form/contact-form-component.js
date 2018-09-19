@@ -1,26 +1,37 @@
 
 import MessageService from 'services/message-service';
+import { reportValidity, getFormData } from 'utils/utils';
 
-const addErrorValidation = (formInputs) => {
-  for (let i = 0; i < formInputs.length; i += 1) {
-    const input = formInputs[i];
-    input.addEventListener('blur', () => {
-      if (!input.checkValidity()) {
-        input.classList.add('error');
-      } else {
-        input.classList.remove('error');
-      }
-    });
+const addCustomValidation = (input) => {
+  if (input.value === input.value.toUpperCase()) {
+    input.setCustomValidity('No introduzcas todo el texto en mayúsculas');
+  } else {
+    input.setCustomValidity('');
   }
 };
 
-const getFormData = (formInputs) => {
-  const formData = {};
+const addErrorClass = (input) => {
+  if (!input.checkValidity()) {
+    input.classList.add('error');
+  } else {
+    input.classList.remove('error');
+  }
+};
+
+const handleValidation = (formInputs) => {
   for (let i = 0; i < formInputs.length; i += 1) {
     const input = formInputs[i];
-    formData[input.name] = input.value;
+
+    input.addEventListener('focus', () => {
+      input.classList.add('focus');
+    });
+
+    input.addEventListener('blur', () => {
+      input.classList.remove('focus');
+      addCustomValidation(input);
+      addErrorClass(input);
+    });
   }
-  return formData;
 };
 
 export const updateContactForm = () => {
@@ -29,12 +40,12 @@ export const updateContactForm = () => {
   const formInputs = contactForm.getElementsByClassName('contact-input');
   const notice = document.getElementById('notice');
 
-  addErrorValidation(formInputs);
+  handleValidation(formInputs);
 
   submitFormButton.addEventListener('click', (e) => {
     e.preventDefault();
     submitFormButton.disable = true;
-    contactForm.reportValidity();
+    reportValidity(contactForm);
     if (contactForm.checkValidity()) {
       const MessageServiceInstance = new MessageService();
       MessageServiceInstance.postMessage(getFormData(formInputs)).then(

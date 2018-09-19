@@ -7,6 +7,7 @@ $darkgray: gray;
 $electricgreen: #b4e07a;
 $darkgreen: #35524A;
 $red: red;
+$blue: blue;
 
 $primary-color: $electricgreen;
 $secondary-color: $darkgray;
@@ -38,4 +39,15 @@ $breakpoint-tablet-portrait: 600px;
 $breakpoint-tablet-landscape: 900px;
 $breakpoint-desktop: 1200px;
 
+$header-height: 90px;
 $footer-height: 58px;
+
+
+@keyframes heartBeat {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.5);
+  }
+}

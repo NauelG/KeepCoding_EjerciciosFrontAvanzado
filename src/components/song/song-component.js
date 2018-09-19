@@ -1,4 +1,6 @@
-export const createSong = ({ title, author, imageUrl, id } = { title: 'No title', author: 'No author' }) => {
+export const createSong = ({
+  title, author, imageUrl, id
+} = { title: 'No title', author: 'No author' }) => {
   const song = document.createElement('div');
   song.classList.add('song');
   song.innerHTML = `

@@ -12,4 +12,12 @@ footer {
   align-items: center;
   justify-content: center;
   box-shadow: $box-shadow-default;
+
+}
+.create-button {
+  margin-left: 5px;
+  background-color: transparent;
+  border: solid 2px $gray;
+  @include fontSize($font-size-xl);
+  color: $primary-color;
 }

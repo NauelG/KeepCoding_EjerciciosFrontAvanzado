@@ -49,6 +49,10 @@
       &.error {
         border-color: $error;
       }
+
+      &.focus {
+        border-color: $blue;
+      }
     }
 
     textarea {
